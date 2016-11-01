@@ -97,7 +97,7 @@
 
 	function doGetSessionsByLocation($location) {
 		$connect = dbConnect();
-		$sql = "SELECT * FROM event WHERE event_location = :location";
+		$sql = "SELECT * FROM event WHERE event_location = :location AND event_datetime > now()";
 		$conn = $connect->prepare($sql);
 		$conn->bindValue(':location', $location, PDO::PARAM_STR);
 		$conn->execute();
