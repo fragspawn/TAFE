@@ -39,6 +39,9 @@ form {
 .lowlight {
 	background: #c1cd23;
 }
+.superhighlight {
+	background: #f3ff55;
+}
 
 section span {
 	text-align: left;
