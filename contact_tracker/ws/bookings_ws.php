@@ -19,7 +19,7 @@
 
 	function dbConnect() {
 		// SETUP CONNECTION TO DATABASE
-		$db_user = 'root'; $db_pass = 'abc123'; $db_uri = "mysql:dbname=formsubmit;host=127.0.0.1";
+		$db_user = 'root'; $db_pass = ''; $db_uri = "mysql:dbname=formsubmit;host=127.0.0.1";
 		$conn = new PDO($db_uri, $db_user, $db_pass);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $conn;
@@ -264,5 +264,7 @@
 		}
 		exit();
 	}
-	echo json_encode(array("result", "Invalid Request"));
+	echo $_SERVER['REQUEST_METHOD'];
+	print_r($_POST);
+//	echo json_encode(array("result", "Invalid Request"));
 ?>

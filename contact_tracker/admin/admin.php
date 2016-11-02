@@ -41,9 +41,7 @@
 		<link rel="stylesheet" href="../css/style.css">
 		<!-- <meta http-equiv="refresh" content="30"> -->
 		<script
-			src="https://code.jquery.com/jquery-3.1.1.slim.js"
-			integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="
-			crossorigin="anonymous">
+			src="../js/jquery-3.1.0.min.js">
   		</script>
 
 		<script>
@@ -99,19 +97,13 @@
 
             function doSubmit(elem) {
 				$.ajax({
-					url: "../ws/bookings_ws.php",
+					url: "http://localhost/TAFE/contact_tracker/ws/bookings_ws.php",
 					method: "POST",
-					data: { id : form },
+					data: $("form").serialize(),
 					dataType: "html"
-				});
-				
-				request.done(function( msg ) {
+				}).done(function(msg) {
 					console.log(msg);
 					hideForm();
-				});
-				
-				request.fail(function( jqXHR, textStatus ) {
-					alert( "Request failed: " + textStatus );
 				});
 			}
 		</script>
@@ -147,7 +139,7 @@
 <div id="form">
 	<aside onClick="hideForm()">X</aside>
 	<h3>Add Event Form</h3>
-	<form>
+	<form id="formvars">
 		<div>
 			<label>Event Name</label>
 			<input type="text" name="event_name">
