@@ -38,9 +38,11 @@ form {
 
 .lowlight {
 	background: #c1cd23;
+	display: none;
 }
 .superhighlight {
 	background: #f3ff55;
+	display: none;
 }
 
 section span {
@@ -75,10 +77,79 @@ section .narrow {
 	margin:0 auto;
 }
 
+.addcircle {
+	color: white;
+	text-align: center;
+	font-size: 200%;
+	margin-bottom: -10px;
+	background: #e31b23;
+	border-radius: 40px;
+	height: 40px;
+	width: 40px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	border: 1px solid #555555;
+	padding: 8px;
+	margin: 16px auto;
+	box-shadow: 6px 6px 5px #166a0c;
+}
+
+#tint {
+	display: none;
+	position: absolute;
+	background: black;
+	opacity: .6;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#form {
+	padding: 20px;
+	background: #56aa1c;
+	display: none;
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	bottom: 20%;
+	right: 20%;
+}
+
+#form aside {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+#form label {
+	width: 148px;
+	padding: 8px;
+}
+#form div {
+	padding: 8px;
+	padding-left: 16px;
+}
+
 	@media only screen and (max-width: 768px) {
 
 		section {
 			width:80%;
 		}
+
+		#tint {
+			display: none;
+		}
+
+		#form {
+			display: none;
+			position: absolute;
+			background: white;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+
 
 	}

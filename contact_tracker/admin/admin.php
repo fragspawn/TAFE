@@ -40,6 +40,12 @@
 	<head>
 		<link rel="stylesheet" href="../css/style.css">
 		<!-- <meta http-equiv="refresh" content="30"> -->
+		<script
+			src="https://code.jquery.com/jquery-3.1.1.slim.js"
+			integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="
+			crossorigin="anonymous">
+  		</script>
+
 		<script>
             function showHideSessions(ses_name) {
                 var sectionNodes = document.getElementsByTagName('section');
@@ -80,7 +86,34 @@
                     }
                 }
             }
-            
+
+			function showForm() {
+				document.getElementById('tint').style.display = 'block';
+				document.getElementById('form').style.display = 'block';
+			}
+
+			function hideForm() {
+				document.getElementById('tint').style.display = 'none';
+				document.getElementById('form').style.display = 'none';
+			}
+
+            function doSubmit(elem) {
+				$.ajax({
+					url: "../ws/bookings_ws.php",
+					method: "POST",
+					data: { id : form },
+					dataType: "html"
+				});
+				
+				request.done(function( msg ) {
+					console.log(msg);
+					hideForm();
+				});
+				
+				request.fail(function( jqXHR, textStatus ) {
+					alert( "Request failed: " + textStatus );
+				});
+			}
 		</script>
 	</head>
 	<body>	
@@ -109,8 +142,44 @@
 	}
 
 ?>
-
-
+<aside class="addcircle" onClick="showForm()">+</aside>
+<div id="tint"></div>
+<div id="form">
+	<aside onClick="hideForm()">X</aside>
+	<h3>Add Event Form</h3>
+	<form>
+		<div>
+			<label>Event Name</label>
+			<input type="text" name="event_name">
+		</div>
+		<div>
+			<label>Event Location</label>
+			<input type="text" name="event_location">
+		</div>
+		<div>
+			<label>Event Date</label>
+			<input type="date" name="event_datetime">
+		</div>
+		<div>
+			<label>Event Time</label>
+			<select name="event_length">
+				<option value=".5">30 minutes</option>
+				<option value="1">1 hour</option>
+				<option value="1.5">1:30</option>
+				<option value="2">2 hours</option>
+				<option value="2.5">2.5 hours</option>
+				<option value="3">3 hours</option>
+			</select>
+		</div>
+		<div>
+			<label>Capacity</label>
+			<input type="text" name="event_capacity">
+		</div>
+		<div>
+			<input type="button" value="submit" name="submit" onClick="doSubmit(this)">
+		</div>
+	</form>
+</div>
  </div>
 	</body>
 </html>
