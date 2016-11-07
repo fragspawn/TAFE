@@ -1,0 +1,12 @@
+OK, 
+
+I’m putting my name down to setup the web interface. URLs that go into the routers follow. 
+
+NETWORK TEAM
+
+Each AP positioned in different booked rooms throughout campus
+Each AP needs to be wired, with a route to the internet
+Each AP has SSID/WPA combination puzzle for orienteering student to "work out" 
+When the student works out the password, AP visits a different a defined URL irrespective of http request, using (NAT, a captive portal or via a Proxy Address)
+
+
