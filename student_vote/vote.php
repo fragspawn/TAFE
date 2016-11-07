@@ -51,7 +51,7 @@
 
 	function doGetVotes() {
 		$connect = dbConnect();
-		$sql = "SELECT count(*) AS vote_count, vote_choice FROM votes GROUP BY vote_choice";
+		$sql = "SELECT count(*) AS vote_count, vote_choice FROM votes GROUP BY vote_choice ORDER BY vote_count DESC";
 		$conn = $connect->prepare($sql);
 		$conn->execute();
 		return $conn->fetchAll(PDO::FETCH_ASSOC);		
