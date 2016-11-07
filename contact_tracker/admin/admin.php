@@ -45,6 +45,17 @@
   		</script>
 
 		<script>
+			window.onload = function() {
+                var darkgreen = document.getElementsByClassName('lowlight');
+                var lightgreen = document.getElementsByClassName('superhighlight');
+                for(var loop = 0;loop < darkgreen.length;loop++) {
+					darkgreen[loop].style.display = 'none';
+				}
+                for(var loop = 0;loop < lightgreen.length;loop++) {
+					lightgreen[loop].style.display = 'none';
+				}
+			}
+
             function showHideSessions(ses_name) {
                 var sectionNodes = document.getElementsByTagName('section');
                 var idname = ses_name.id;
