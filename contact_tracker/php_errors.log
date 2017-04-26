@@ -1,0 +1,7 @@
+[26-Apr-2017 23:07:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'formsubmit'' in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php:6
+Stack trace:
+#0 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(6): PDO->__construct('mysql:dbname=fo...', 'root', '')
+#1 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(12): dbConnect()
+#2 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(129): doGetLocations()
+#3 {main}
+  thrown in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php on line 6

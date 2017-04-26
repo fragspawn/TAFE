@@ -16,6 +16,25 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `event`
+--
+
+DROP TABLE IF EXISTS `event`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `event` (
+  `event_id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_name` varchar(128) NOT NULL,
+  `event_location` varchar(128) NOT NULL,
+  `event_datetime` datetime NOT NULL,
+  `event_length` int(11) NOT NULL,
+  `event_capacity` int(11) NOT NULL,
+  PRIMARY KEY (`event_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+--
 -- Table structure for table `booking`
 --
 
@@ -33,22 +52,4 @@ CREATE TABLE `booking` (
   KEY `event_id` (`event_id`),
   CONSTRAINT `FK_evtKey` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `event`
---
-
-DROP TABLE IF EXISTS `event`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `event` (
-  `event_id` int(11) NOT NULL AUTO_INCREMENT,
-  `event_name` varchar(128) NOT NULL,
-  `event_location` varchar(128) NOT NULL,
-  `event_datetime` datetime NOT NULL,
-  `event_length` int(11) NOT NULL,
-  `event_capacity` int(11) NOT NULL,
-  PRIMARY KEY (`event_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

@@ -13,7 +13,7 @@
 		$_SESSION['last_request'] = time();	
 	}
 
-	function checkReferrer() {
+	function checkReferrer() {  //incomplete
 		$_SERVER['HTTP_REFERER'];
 	}
 
@@ -113,29 +113,6 @@
 		return $conn->fetchAll(PDO::FETCH_ASSOC);		
 	}
 		
-/*
-	// Cool code I'll never use...
-	if($_POST) {
-		$sql = "INSERT INTO formdata (";
-		for($l=1;$l<=sizeof($_POST);$l++) {
-			$sql .= 'col_' . $l . ', ';
-		}
-		$sql = rtrim($sql, ",");
-		$l=1;
-		$sql .= ') VALUES (';
-		foreach($_POST as $postitem) {
-			$sql .= "'" . $_POST[$l] . "', ";
-			$l++;
-		}
-		$sql = rtrim($sql, ",");
-		$sql .= ')';
-		echo $sql;
-	} else {
-		// Default: delete;
-		echo json_encode(array("result", "OK"));
-	}
-	*/
-
 	// EVENT LIST BY LOCATION (JSON)
 	if(isset($_GET['ws_venue'])) {
 		if($outVal = doValidate($_GET['ws_venue'], 'string')) {
@@ -264,7 +241,6 @@
 		}
 		exit();
 	}
-	echo $_SERVER['REQUEST_METHOD'];
-	print_r($_POST);
-//	echo json_encode(array("result", "Invalid Request"));
+	
+	echo json_encode(array("result", "Invalid Request"));
 ?>
