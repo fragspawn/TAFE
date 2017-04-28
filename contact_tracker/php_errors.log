@@ -5,3 +5,35 @@ Stack trace:
 #2 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(129): doGetLocations()
 #3 {main}
   thrown in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php on line 6
+[28-Apr-2017 03:47:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'formsubmit'' in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php:6
+Stack trace:
+#0 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(6): PDO->__construct('mysql:dbname=fo...', 'root', '')
+#1 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(12): dbConnect()
+#2 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(129): doGetLocations()
+#3 {main}
+  thrown in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php on line 6
+[28-Apr-2017 03:52:25 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'formsubmit'' in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php:6
+Stack trace:
+#0 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(6): PDO->__construct('mysql:dbname=fo...', 'root', '')
+#1 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(12): dbConnect()
+#2 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(129): doGetLocations()
+#3 {main}
+  thrown in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php on line 6
+[28-Apr-2017 03:53:18 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'formsubmit.event' doesn't exist' in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(15): PDOStatement->execute()
+#1 /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php(129): doGetLocations()
+#2 {main}
+  thrown in /home/ubuntu/workspace/TAFE/contact_tracker/admin/admin.php on line 15
+[28-Apr-2017 04:34:00 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WERE email_addr = 'john@perry.com'' at line 1' in /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php(64): PDOStatement->execute()
+#1 /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php(182): delBooking('john@perry.com')
+#2 {main}
+  thrown in /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php on line 64
+[28-Apr-2017 04:35:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WERE email_addr = 'john@perry.com'' at line 1' in /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php(64): PDOStatement->execute()
+#1 /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php(182): delBooking('john@perry.com')
+#2 {main}
+  thrown in /home/ubuntu/workspace/TAFE/contact_tracker/ws/bookings_ws.php on line 64

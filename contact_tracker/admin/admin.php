@@ -108,7 +108,7 @@
 
             function doSubmit(elem) {
 				$.ajax({
-					url: "http://localhost/TAFE/contact_tracker/ws/bookings_ws.php",
+					url: "../ws/bookings_ws.php",
 					method: "POST",
 					data: $("form").serialize(),
 					dataType: "html"
@@ -129,26 +129,26 @@
 	$locations = doGetLocations();	
 
 	foreach($locations as $location) {
-	    echo '<section id="' . $location['event_location'] . '" class="highlight" onClick="showHideSessions(this)"><span>' . $location['event_location'] . '</span></section>';
+	    echo '<a href="#"><section id="' . $location['event_location'] . '" class="highlight" onClick="showHideSessions(this)"><span>' . $location['event_location'] . '</span></section></a>';
 		$events = doGetSessionsByLocation($location['event_location']);
 	    foreach($events as $event) {
-	        echo '<section id="' . $location['event_location'] . '_' . $event['event_id'] . '" class="lowlight" onClick="showHideAttendees(this)"><span>' . $event['event_name'] . 
+	        echo '<a href="#"><section id="' . $location['event_location'] . '_' . $event['event_id'] . '" class="lowlight" onClick="showHideAttendees(this)"><span>' . $event['event_name'] . 
                 '</span><span>' . $event['event_datetime'] . '</span><span>' . $event['event_capacity'] .
-            '</span></section>';
+            '</span></section></a>';
             $customers = doGetAttendeesBySession($event['event_id']);
             foreach($customers as $customer) {
-	            echo '<section id="' . $location['event_location'] . '_' . $event['event_id'] . '_' . $customer['booking_id'] . '" class="superhighlight"><span>' . $customer['first_name'] . '</span><span>' . $customer['last_name'] . 
+	            echo '<a href="#"><section id="' . $location['event_location'] . '_' . $event['event_id'] . '_' . $customer['booking_id'] . '" class="superhighlight"><span>' . $customer['first_name'] . '</span><span>' . $customer['last_name'] . 
                 '</span><span>' . $customer['email_addr'] . '</span><span>' . $customer['phone_number'] .
-                '</span></section>';
+                '</span></section></a>';
             }
         }
 	}
 
 ?>
-<aside class="addcircle" onClick="showForm()">+</aside>
+<a href="#"><aside class="addcircle" onClick="showForm()">+</aside></a>
 <div id="tint"></div>
 <div id="form">
-	<aside onClick="hideForm()">X</aside>
+	<a href="#"><aside onClick="hideForm()">X</aside></a>
 	<h3>Add Event Form</h3>
 	<form id="formvars">
 		<div>
@@ -161,7 +161,7 @@
 		</div>
 		<div>
 			<label>Event Date</label>
-			<input type="date" name="event_datetime">
+			<input type="Datetime-local" name="event_datetime">
 		</div>
 		<div>
 			<label>Event Time</label>

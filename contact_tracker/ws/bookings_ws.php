@@ -56,7 +56,14 @@
 			}
 		}		
 	}
-
+	function delBooking($email_addr) {
+		$connect = dbConnect();
+		$sql = "DELETE FROM booking WHERE email_addr = :email_addr";
+		$conn = $connect->prepare($sql);
+		$conn->bindValue(':email_addr', $email_addr);
+		return $conn->execute();
+	}
+	
 	function doNewEvent($post_array) {
 		// TAKE FORM DATA AND INSERT INTO DATABASE
 		// Build insert statement
@@ -170,6 +177,17 @@
 		exit();
 	}
 
+	// DELETE ALL BOOKINGS ON E-MAIL ADDRESS
+	if(isset($_POST['email_addr'])) {
+		$res = delBooking(doValidate($_POST['email_addr'], 'string'));
+		if($res) {
+			echo json_encode(array("result", "bookings deleted"));
+		} else {
+			echo json_encode(array("result", "insert failed"));
+		}
+		exit();
+	}
+	
 	// NEW BOOKING	
 	if(isset($_POST['event_id'])) {
 		$formdata = array();
