@@ -56,6 +56,7 @@
 			}
 		}		
 	}
+
 	function delBooking($email_addr) {
 		$connect = dbConnect();
 		$sql = "DELETE FROM booking WHERE email_addr = :email_addr";
