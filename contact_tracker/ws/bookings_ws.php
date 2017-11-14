@@ -179,7 +179,7 @@
 	}
 
 	// DELETE ALL BOOKINGS ON E-MAIL ADDRESS
-	if(isset($_POST['email_addr'])) {
+	if(isset($_POST['del_email_addr'])) {
 		$res = delBooking(doValidate($_POST['email_addr'], 'string'));
 		if($res) {
 			echo json_encode(array("result", "bookings deleted"));
