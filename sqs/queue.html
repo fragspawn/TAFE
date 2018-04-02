@@ -1,0 +1,20 @@
+<div id="noinqueue"></div>
+<div id="logout">
+    <fieldset>
+        <form method="POST">
+            <input type="submit" name="logout" value="logout">
+        </form>
+    </fieldset>
+</div>
+<div id="userid"></div>
+<form method="POST" id="enqueueform">
+    <fieldset>
+        <legend>Add to Queue</legend>
+        <label>Problem</label>
+        <input id="problem" name="problem" type="text" width="12" required>
+        <label>Description</label>
+        <input id="description" name="description" type="text" width="12" required>        
+        <input type="button" name="add" value="go" onClick="enQueue()">
+    </fieldset>
+</form>
+<div id="queuelist"></div>
