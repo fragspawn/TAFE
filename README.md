@@ -8,3 +8,4 @@
 # 1. comp - Wireless AP tresure hunt
 # 2. contact_tracker - Event booking backend (connect, HTML5 course)
 # 3. student_vote - Voting system for students to elect a venue to celebrate graduation
+# 4. sqs - student queuing system 
